@@ -1,6 +1,7 @@
 import { Deck } from '@/types/Deck';
 import { Card } from '@/types/Card';
 import { StringObject } from '@/types/Ui';
+import { isExtraDeck } from './card';
 
 export const randomizeDeck = (
 	cards: Record<string, Card>,
@@ -8,39 +9,62 @@ export const randomizeDeck = (
 	extraCards: string[],
 	names: StringObject,
 	staples: string[]
-): Deck => {
+): Promise<Deck> => {
 	const mainDeck: Deck['mainDeck'] = [];
 	const extraDeck: Deck['extraDeck'] = [];
 
-	for (let i = 0; i < 9; i++) {
-		let card = cards[names[getRandomCard(staples)]];
-		if (!card) continue;
-		if (cardIsAddable(card, mainDeck)) continue;
-		mainDeck.push(card);
-	}
+	const generateDeck = (deck: Card[], cardPool: string[], limit: number) => {
+		let i = 0;
+		do {
+			i++;
+			const rid = getRandomCard(cardPool);
+			const card = cards[rid];
+			addCard(card, deck);
+		} while (deck.length < limit && i < limit * 3);
+	};
 
-	do {
-		let card = cards[getRandomCard(extraCards)];
-		if (!card) continue;
-		if (cardIsAddable(card, extraDeck)) continue;
-		extraDeck.push(card);
-	} while (extraDeck.length < 15);
+	const getRandomCard = (array: string[]) =>
+		array[Math.floor(Math.random() * array.length)];
 
-	do {
-		let card = cards[getRandomCard(mainCards)];
-		if (!card) continue;
-		if (cardIsAddable(card, mainDeck)) continue;
-		mainDeck.push(card);
-	} while (mainDeck.length < 40);
+	const addCard = (card: Card, deck: Card[]) => {
+		if (!card || !card.name) return;
+		if (!cardIsAddable(card, deck)) return;
 
-	mainDeck.sort((a, b) => a.name.localeCompare(b.name));
-	extraDeck.sort((a, b) => a.name.localeCompare(b.name));
+		const cascadeCards = getCascadeCards(card);
+		if (cascadeCards.length > 0) {
+			deck.push({ ...card, required: true });
+			cascadeCards.forEach(c => {
+				if (isExtraDeck(c)) {
+					addCard(c, extraDeck);
+				} else {
+					addCard(c, mainDeck);
+				}
+			});
+		} else {
+			deck.push(card);
+		}
+	};
 
-	return { mainDeck, extraDeck };
+	const cardIsAddable = (card: Card, array: Card[]) =>
+		array.filter(c => c._id === card._id).length < 3;
+
+	const getCascadeCards = (card: Card): Card[] => {
+		if (!card.description) return [];
+		const matches = card.description.match(/"([^"]+)"/g);
+		if (!matches) return [];
+		return matches
+			.filter(match => match !== card.name)
+			.map(match => ({ ...cards[names[match]], required: true }));
+	};
+
+	return new Promise(resolve => {
+		generateDeck(mainDeck, staples, 9);
+		generateDeck(extraDeck, extraCards, 15);
+		generateDeck(mainDeck, mainCards, 40);
+
+		mainDeck.sort((a, b) => a.name.localeCompare(b.name));
+		extraDeck.sort((a, b) => a.name.localeCompare(b.name));
+
+		resolve({ mainDeck, extraDeck });
+	});
 };
-
-const cardIsAddable = (card: Card, array: Card[]) =>
-	array.filter(c => c._id === card._id).length >= 3;
-
-const getRandomCard = (array: string[]) =>
-	array[Math.floor(Math.random() * array.length)];

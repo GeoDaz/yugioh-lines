@@ -34,4 +34,5 @@ export interface Card {
 	ocgBanStatus?: string;
 	banStatus?: string;
 	mostUsedDeckTypes: string[];
+	required?: boolean;
 }

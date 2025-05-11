@@ -30,9 +30,15 @@ interface Props {
 const PageLines: React.FC<Props> = ({ cards, names, mainCards, extraCards, staples }) => {
 	const [deck, setDeck] = useState<DeckType>(defaultDeck);
 	const { download } = useDownloadYdk(deck);
+	const [loading, setLoading] = useState(false);
 
-	const handleRandomize = () =>
-		setDeck(randomizeDeck(cards, mainCards, extraCards, names, staples));
+	const handleRandomize = async () => {
+		setLoading(true);
+		randomizeDeck(cards, mainCards, extraCards, names, staples).then(deck => {
+			setDeck(deck);
+			setLoading(false);
+		});
+	};
 
 	const { mainDeck, extraDeck } = deck;
 	return (
@@ -47,7 +53,11 @@ const PageLines: React.FC<Props> = ({ cards, names, mainCards, extraCards, stapl
 					onClick={handleRandomize}
 					variant={mainDeck.length > 0 ? 'outline-primary' : 'primary'}
 				>
-					<Icon name="arrow-counterclockwise me-2" /> Randomize a deck
+					<Icon
+						name="arrow-counterclockwise me-2"
+						className={loading ? 'spinning' : undefined}
+					/>{' '}
+					Randomize a deck
 				</Button>
 				{mainDeck.length > 0 && (
 					<Button size="lg" onClick={download}>
@@ -55,14 +65,25 @@ const PageLines: React.FC<Props> = ({ cards, names, mainCards, extraCards, stapl
 					</Button>
 				)}
 			</div>
+			{/* TODO add a void deck section with a plus button */}
 			{mainDeck.length > 0 && (
 				<div className="mt-4">
-					<Deck deck={mainDeck} title="Main Deck" />
+					<Deck
+						deck={mainDeck}
+						title="Main Deck"
+						/* handleAddCard={handleAddCard} */
+					/>
 				</div>
 			)}
 			{extraDeck.length > 0 && (
 				<div className="mt-4">
-					<Deck deck={extraDeck} title="Extra Deck" bottom />
+					<Deck
+						deck={extraDeck}
+						title="Extra Deck"
+						bottom
+						max={15}
+						/* handleAddCard={handleAddCard} */
+					/>
 				</div>
 			)}
 		</Layout>
@@ -71,11 +92,10 @@ const PageLines: React.FC<Props> = ({ cards, names, mainCards, extraCards, stapl
 
 export const getStaticProps: GetStaticProps = async () => {
 	try {
-		const cards: Record<string, CardType> = require('../json/top1000.json');
+		const cards: Record<string, CardType> = require('../json/top.json');
 		const mainCards: string[] = [];
 		const extraCards: string[] = [];
 		const names: StringObject = {};
-		const staples: string[] = require('../json/staples.json');
 
 		Object.values(cards).forEach(card => {
 			names[card.name] = card._id;
@@ -85,6 +105,10 @@ export const getStaticProps: GetStaticProps = async () => {
 				mainCards.push(card._id);
 			}
 		});
+
+		const staples: string[] = require('../json/staples.json').map(
+			(name: string) => names[name]
+		);
 
 		return { props: { cards, names, mainCards, extraCards, staples } };
 	} catch (e) {
