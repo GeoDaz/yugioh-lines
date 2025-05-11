@@ -9,7 +9,6 @@ import LineImage from './LineImage';
 import colors, { legend } from '@/consts/colors';
 import UploadImage from '../UploadImage';
 import InputMono from '../InputMono';
-import { LicenseContext } from '@/context/license';
 import { makeClassName } from '@/functions';
 import ButtonRemove from '../Button/ButtonRemove';
 
