@@ -1,3 +1,4 @@
+import { Deck } from '@/hooks/useDownloadYdk';
 import { Card } from '@/types/Card';
 import { StringObject } from '@/types/Ui';
 
@@ -7,15 +8,15 @@ export const randomizeDeck = (
 	extraCards: string[],
 	names: StringObject,
 	staples: string[]
-): { deck: Card[]; extraDeck: Card[] } => {
-	const deck: Card[] = [];
-	const extraDeck: Card[] = [];
+): Deck => {
+	const mainDeck: Deck['mainDeck'] = [];
+	const extraDeck: Deck['extraDeck'] = [];
 
 	for (let i = 0; i < 9; i++) {
 		let card = cards[names[getRandomCard(staples)]];
 		if (!card) continue;
-		if (cardIsAddable(card, deck)) continue;
-		deck.push(card);
+		if (cardIsAddable(card, mainDeck)) continue;
+		mainDeck.push(card);
 	}
 
 	do {
@@ -28,14 +29,14 @@ export const randomizeDeck = (
 	do {
 		let card = cards[getRandomCard(mainCards)];
 		if (!card) continue;
-		if (cardIsAddable(card, deck)) continue;
-		deck.push(card);
-	} while (deck.length < 40);
+		if (cardIsAddable(card, mainDeck)) continue;
+		mainDeck.push(card);
+	} while (mainDeck.length < 40);
 
-	deck.sort((a, b) => a.name.localeCompare(b.name));
+	mainDeck.sort((a, b) => a.name.localeCompare(b.name));
 	extraDeck.sort((a, b) => a.name.localeCompare(b.name));
 
-	return { deck, extraDeck };
+	return { mainDeck, extraDeck };
 };
 
 const cardIsAddable = (card: Card, array: Card[]) =>

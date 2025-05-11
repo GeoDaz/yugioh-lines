@@ -131,6 +131,17 @@ a:active:not(.btn) {
   --bs-btn-disabled-border-color: var(--bs-primary);
 }
 
+.btn-outline-primary {
+  --bs-btn-color: var(--bs-primary);
+  --bs-btn-border-color: var(--bs-primary);
+  --bs-btn-hover-color: white;
+  --bs-btn-hover-border-color: var(--bs-primary);
+  --bs-btn-hover-bg: var(--bs-primary-hover);
+  --bs-btn-active-color: var(--bs-primary);
+  --bs-btn-active-border-color: var(--bs-primary);
+  --bs-btn-active-bg: var(--bs-primary-active);
+}
+
 .text-primary {
   color: var(--bs-primary) !important;
 }
