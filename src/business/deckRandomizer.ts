@@ -1,4 +1,4 @@
-import { Deck } from '@/hooks/useDownloadYdk';
+import { Deck } from '@/types/Deck';
 import { Card } from '@/types/Card';
 import { StringObject } from '@/types/Ui';
 

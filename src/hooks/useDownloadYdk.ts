@@ -1,12 +1,7 @@
 import { deckToYdk } from '@/business/deckToYdk';
 import { createFile, download } from '@/functions/file';
-import { Card } from '@/types/Card';
+import { Deck } from '@/types/Deck';
 import { useState } from 'react';
-
-export type Deck = {
-	mainDeck: Card[];
-	extraDeck: Card[];
-};
 
 const useDownloadYdk = (deck: Deck) => {
 	const [name, setName] = useState<string | undefined>();

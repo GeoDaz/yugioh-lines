@@ -4,11 +4,12 @@ import Layout from '@/components/Layout';
 import { GetStaticProps } from 'next';
 import { StringObject } from '@/types/Ui';
 import { randomizeDeck } from '@/business/deckRandomizer';
-import { Card } from '@/types/Card';
 import Deck from '@/components/Card/Deck';
-import { isExtraDeck } from '@/business/card';
 import Icon from '@/components/Icon';
-import useDownloadYdk, { Deck as DeckType } from '@/hooks/useDownloadYdk';
+import { Card as CardType } from '@/types/Card';
+import { Deck as DeckType } from '@/types/Deck';
+import { isExtraDeck } from '@/business/card';
+import useDownloadYdk from '@/hooks/useDownloadYdk';
 
 const defaultProps: Props = {
 	cards: {},
@@ -20,7 +21,7 @@ const defaultProps: Props = {
 const defaultDeck: DeckType = { mainDeck: [], extraDeck: [] };
 
 interface Props {
-	cards: Record<string, Card>;
+	cards: Record<string, CardType>;
 	names: StringObject;
 	mainCards: string[];
 	extraCards: string[];
@@ -70,7 +71,7 @@ const PageLines: React.FC<Props> = ({ cards, names, mainCards, extraCards, stapl
 
 export const getStaticProps: GetStaticProps = async () => {
 	try {
-		const cards: Record<string, Card> = require('../json/top1000.json');
+		const cards: Record<string, CardType> = require('../json/top1000.json');
 		const mainCards: string[] = [];
 		const extraCards: string[] = [];
 		const names: StringObject = {};

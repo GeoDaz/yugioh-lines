@@ -1,4 +1,4 @@
-import { Deck } from '@/hooks/useDownloadYdk';
+import { Deck } from '@/types/Deck';
 
 export const deckToYdk = (deck: Deck) =>
 	`#main\n${deck.mainDeck

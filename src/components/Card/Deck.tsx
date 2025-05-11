@@ -11,10 +11,13 @@ const Deck = ({
 	title?: string;
 	bottom?: boolean;
 }) => {
+	// TODO ajouter et supprimer des cartes
 	return (
 		<div className="card">
 			<div className="card-header">
-				<h2 className="card-title">{title}</h2>
+				<h2 className="card-title">
+					{title} ({deck.length})
+				</h2>
 			</div>
 			<div className="d-flex flex-wrap gap-3 card-body">
 				{deck.map(card => (
