@@ -2,14 +2,18 @@ import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import Layout from '@/components/Layout';
 import { GetStaticProps } from 'next';
-import { StringObject } from '@/types/Ui';
-import { randomizeDeck } from '@/business/deckRandomizer';
+import { randomizeDeck, RandomizeDeckArgs } from '@/business/deckRandomizer';
 import Deck from '@/components/Card/Deck';
 import Icon from '@/components/Icon';
-import { Card as CardType } from '@/types/Card';
 import { Deck as DeckType } from '@/types/Deck';
-import { isExtraDeck } from '@/business/card';
+import { getCardArchetype, isExtraDeck } from '@/business/card';
 import useDownloadYdk from '@/hooks/useDownloadYdk';
+import { RegulationLabels, Regulations } from '@/constants/limitations';
+import SelectField from '@/components/Field/SelectField';
+import Range from '@/components/Field/Range';
+import { consistencyLevels } from '@/constants/consistency';
+
+type Props = Omit<RandomizeDeckArgs, 'regulation'>;
 
 const defaultProps: Props = {
 	cards: {},
@@ -20,21 +24,16 @@ const defaultProps: Props = {
 };
 const defaultDeck: DeckType = { mainDeck: [], extraDeck: [] };
 
-interface Props {
-	cards: Record<string, CardType>;
-	names: StringObject;
-	mainCards: string[];
-	extraCards: string[];
-	staples: string[];
-}
-const PageLines: React.FC<Props> = ({ cards, names, mainCards, extraCards, staples }) => {
+const PageLines: React.FC<Props> = props => {
 	const [deck, setDeck] = useState<DeckType>(defaultDeck);
 	const { download } = useDownloadYdk(deck);
 	const [loading, setLoading] = useState(false);
+	const [regulation, setRegulation] = useState<Regulations>(Regulations.md);
+	const [consistency, setConsistency] = useState<number>(1);
 
 	const handleRandomize = async () => {
 		setLoading(true);
-		randomizeDeck(cards, mainCards, extraCards, names, staples).then(deck => {
+		randomizeDeck(props).then(deck => {
 			setDeck(deck);
 			setLoading(false);
 		});
@@ -47,7 +46,14 @@ const PageLines: React.FC<Props> = ({ cards, names, mainCards, extraCards, stapl
 			title="Deck Randomizer"
 			metadescription="Get a randomized Yu-Gi-Oh deck with this tool."
 		>
-			<div className="d-flex gap-3">
+			<div className="d-flex gap-3 mb-3">
+				<SelectField
+					id="format-select"
+					label="Format"
+					onChange={e => setRegulation(e.target.value as Regulations)}
+					value={regulation}
+					options={RegulationLabels}
+				/>
 				<Button
 					size="lg"
 					onClick={handleRandomize}
@@ -64,6 +70,15 @@ const PageLines: React.FC<Props> = ({ cards, names, mainCards, extraCards, stapl
 						<Icon name="download me-2" /> Export
 					</Button>
 				)}
+			</div>
+			<div>
+				<Range
+					id="consistency"
+					label="Consistency"
+					value={consistency}
+					onChange={setConsistency}
+					options={consistencyLevels}
+				/>
 			</div>
 			{/* TODO add a void deck section with a plus button */}
 			{mainDeck.length > 0 && (
@@ -92,12 +107,13 @@ const PageLines: React.FC<Props> = ({ cards, names, mainCards, extraCards, stapl
 
 export const getStaticProps: GetStaticProps = async () => {
 	try {
-		const cards: Record<string, CardType> = require('../json/top.json');
-		const mainCards: string[] = [];
-		const extraCards: string[] = [];
-		const names: StringObject = {};
+		const cards: RandomizeDeckArgs['cards'] = require('../json/top.json');
+		const mainCards: RandomizeDeckArgs['mainCards'] = [];
+		const extraCards: RandomizeDeckArgs['extraCards'] = [];
+		const names: RandomizeDeckArgs['names'] = {};
 
 		Object.values(cards).forEach(card => {
+			card.archetype = getCardArchetype(card);
 			names[card.name] = card._id;
 			if (isExtraDeck(card)) {
 				extraCards.push(card._id);
@@ -106,7 +122,7 @@ export const getStaticProps: GetStaticProps = async () => {
 			}
 		});
 
-		const staples: string[] = require('../json/staples.json').map(
+		const staples: RandomizeDeckArgs['staples'] = require('../json/staples.json').map(
 			(name: string) => names[name]
 		);
 

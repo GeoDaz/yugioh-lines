@@ -1,17 +1,28 @@
 import { Deck } from '@/types/Deck';
 import { Card } from '@/types/Card';
-import { StringObject } from '@/types/Ui';
-import { isExtraDeck } from './card';
+import { getRegulationRelease, getLimitationValue, isExtraDeck } from './card';
+import { Regulations } from '@/constants/limitations';
 
-export const randomizeDeck = (
-	cards: Record<string, Card>,
-	mainCards: string[],
-	extraCards: string[],
-	names: StringObject,
-	staples: string[]
-): Promise<Deck> => {
+export type RandomizeDeckArgs = {
+	cards: Record<string, Card>;
+	names: Record<Card['name'], Card['_id']>;
+	mainCards: Card['_id'][];
+	extraCards: Card['_id'][];
+	staples: Card['_id'][];
+	regulation?: Regulations;
+};
+
+export const randomizeDeck = ({
+	cards,
+	names,
+	mainCards,
+	extraCards,
+	staples,
+	regulation = Regulations.md,
+}: RandomizeDeckArgs): Promise<Deck> => {
 	const mainDeck: Deck['mainDeck'] = [];
 	const extraDeck: Deck['extraDeck'] = [];
+	const joinedCards: string[] = [];
 
 	const generateDeck = (deck: Card[], cardPool: string[], limit: number) => {
 		let i = 0;
@@ -23,21 +34,21 @@ export const randomizeDeck = (
 		} while (deck.length < limit && i < limit * 3);
 	};
 
-	const getRandomCard = (array: string[]) =>
+	const getRandomCard = (array: any[]) =>
 		array[Math.floor(Math.random() * array.length)];
 
-	const addCard = (card: Card, deck: Card[]) => {
+	const addCard = (card: Card, deck: Card[], limit?: number) => {
 		if (!card || !card.name) return;
-		if (!cardIsAddable(card, deck)) return;
+		if (!cardIsAddable(card, deck, limit)) return;
 
 		const cascadeCards = getCascadeCards(card);
 		if (cascadeCards.length > 0) {
 			deck.push({ ...card, required: true });
 			cascadeCards.forEach(c => {
 				if (isExtraDeck(c)) {
-					addCard(c, extraDeck);
+					addCard(c, extraDeck, 1);
 				} else {
-					addCard(c, mainDeck);
+					addCard(c, mainDeck, 1);
 				}
 			});
 		} else {
@@ -45,16 +56,82 @@ export const randomizeDeck = (
 		}
 	};
 
-	const cardIsAddable = (card: Card, array: Card[]) =>
-		array.filter(c => c._id === card._id).length < 3;
+	const cardIsAddable = (card: Card, array: Card[], limit: number = 3) => {
+		const cardRelease = getRegulationRelease(card, regulation);
+		if (!cardRelease) return false;
+		const cardLimit = getLimitationValue(card, regulation);
+		if (cardLimit === 0) return false;
+		const calculatedLimit = cardLimit == null ? limit : Math.min(cardLimit, limit);
+		return array.filter(c => c._id === card._id).length < calculatedLimit;
+	};
 
 	const getCascadeCards = (card: Card): Card[] => {
 		if (!card.description) return [];
-		const matches = card.description.match(/"([^"]+)"/g);
+		let matches: string[] | null = card.description.match(/"([^"]+)"/g);
 		if (!matches) return [];
+		matches = Array.from(new Set(matches))
+			.map(match => match.slice(1, -1)) // remove quotes
+			.filter(name => name !== card.name && !joinedCards.includes(name)); // remove self
+		// add to joinedCards after processing
+		joinedCards.push(...matches);
+
 		return matches
-			.filter(match => match !== card.name)
-			.map(match => ({ ...cards[names[match]], required: true }));
+			.map(name => {
+				let card = cards[names[name]];
+				if (!card) {
+					const archetypeCards = mainCards.filter(
+						c => cards[c].archetype === name
+					);
+					if (archetypeCards.length === 0) return null;
+					const cardId = getRandomCard(archetypeCards);
+					card = cards[cardId];
+				}
+				return { ...card, required: true };
+			})
+			.filter(card => card !== null);
+	};
+
+	const gapDeck = (deck: Card[], limit: number, maxLimit: number = limit) => {
+		if (deck.length > limit) {
+			// Remove non-required cards from the end until we reach 40 cards
+			let i = deck.length - 1;
+			while (deck.length > limit && i >= 0) {
+				if (!deck[i].required) {
+					deck.splice(i, 1);
+				}
+				i--;
+			}
+			// If we still have more than maxLimit cards after removing non-required cards,
+			// then remove the excess cards from the end
+			if (deck.length > maxLimit) {
+				deck.splice(maxLimit, deck.length - maxLimit);
+			}
+		}
+	};
+
+	const orderDeck = (deck: Card[]) => {
+		deck.sort((a, b) => {
+			let aRef = getDeckTypeForOrder(a);
+			let bRef = getDeckTypeForOrder(b);
+			if (aRef == null) {
+				if (bRef == null) return 0;
+				return 1;
+			}
+			if (bRef == null) return -1;
+			if (aRef === bRef) {
+				aRef = a.name;
+				bRef = b.name;
+			}
+			return aRef.localeCompare(bRef);
+		});
+	};
+
+	const getDeckTypeForOrder = (card: Card): string | null => {
+		if (card.archetype) return card.archetype;
+		if (card.deckTypes.length === 0) return null;
+		if (card.deckTypes.length === 1) return card.deckTypes[0];
+		if (card.deckTypes.length > 5) return '1';
+		return card.deckTypes.sort((a, b) => a.localeCompare(b))[0];
 	};
 
 	return new Promise(resolve => {
@@ -62,8 +139,11 @@ export const randomizeDeck = (
 		generateDeck(extraDeck, extraCards, 15);
 		generateDeck(mainDeck, mainCards, 40);
 
-		mainDeck.sort((a, b) => a.name.localeCompare(b.name));
-		extraDeck.sort((a, b) => a.name.localeCompare(b.name));
+		gapDeck(mainDeck, 40, 60);
+		gapDeck(extraDeck, 15);
+
+		orderDeck(mainDeck);
+		orderDeck(extraDeck);
 
 		resolve({ mainDeck, extraDeck });
 	});

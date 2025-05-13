@@ -1,3 +1,5 @@
+import { Limitations } from '@/constants/limitations';
+
 export interface Card {
 	_id: string;
 	monsterType: string[];
@@ -14,6 +16,7 @@ export interface Card {
 	__v: number;
 	linkArrows: string[];
 	handtrap: boolean;
+	archetype?: string | null; // Calculated
 	deckTypes: string[];
 	obtain: {
 		source: {
@@ -26,13 +29,13 @@ export interface Card {
 	}[];
 	rarity?: string;
 	release?: string;
-	ocgRelease?: string;
 	tcgRelease?: string;
-	tcgBanStatus?: string;
+	ocgRelease?: string;
+	banStatus?: keyof typeof Limitations;
+	tcgBanStatus?: keyof typeof Limitations;
+	ocgBanStatus?: keyof typeof Limitations;
 	gameId?: string;
 	alternateArt: boolean;
-	ocgBanStatus?: string;
-	banStatus?: string;
 	mostUsedDeckTypes: string[];
 	required?: boolean;
 }
