@@ -20,7 +20,7 @@ export const randomizeDeck = ({
 	extraCards,
 	staples,
 	regulation = Regulations.md,
-	consistency = 0,
+	consistency = 1,
 }: RandomizeDeckArgs): Promise<Deck> => {
 	const mainDeck: Deck['mainDeck'] = [];
 	const extraDeck: Deck['extraDeck'] = [];
@@ -57,6 +57,8 @@ export const randomizeDeck = ({
 			} else {
 				deck.push(card);
 			}
+		} else {
+			deck.push(card);
 		}
 	};
 
@@ -74,8 +76,7 @@ export const randomizeDeck = ({
 		if (!card.description) return [];
 		let matches: string[] | null = card.description.match(/"([^"]+)"/g);
 		if (!matches) return [];
-		matches = Array.from(new Set(matches));
-		matches
+		matches = Array.from(new Set(matches))
 			.map(match => match.slice(1, -1)) // remove quotes
 			.filter(name => !joinedCards.has(name)); // remove cards which joined or is joined
 
