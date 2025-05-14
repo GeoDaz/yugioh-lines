@@ -68,3 +68,6 @@ export const stringToKey = (string: string): string =>
 		.normalize('NFD')
 		.replace(/[\s\-_.'’:?%\u0300-\u036f]/g, '')
 		.toLowerCase();
+
+export const strIncludeArrayValue = (str: string, array: string[]) =>
+	array.find(v => str.includes(v));

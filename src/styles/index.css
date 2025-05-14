@@ -34,11 +34,14 @@
   --bs-primary-active: rgb(54, 29, 107);
 
   --dl-img-size: 10rem;
-  --dl-skin-img-size: 3rem;
+  --dl-skin-img-width: 2rem;
+  --dl-skin-img-height: 3rem;
   --dl-md-img-size: 7.5rem;
-  --dl-md-skin-img-size: 2.5rem;
+  --dl-md-skin-img-width: 1.666rem;
+  --dl-md-skin-img-height: 2.5rem;
   --dl-xs-img-size: 6rem;
-  --dl-xs-skin-img-size: 2rem;
+  --dl-xs-skin-img-width: 1.333rem;
+  --dl-xs-skin-img-height: 2rem;
 }
 
 html,
@@ -224,6 +227,11 @@ h2 {
   border: var(--dl-border);
   background-color: var(--dl-snd-dark);
   max-width: 200px;
+}
+
+.form-check>input,
+.form-check>label {
+  cursor: pointer;
 }
 
 .input-group-text {
@@ -552,8 +560,8 @@ a.line-point {
 }
 
 .line-point .line-skin {
-  max-width: var(--dl-skin-img-size);
-  max-height: var(--dl-skin-img-size);
+  max-width: var(--dl-skin-img-width);
+  max-height: var(--dl-skin-img-height);
   position: relative;
   z-index: 3;
   color: var(--bs-dark);
@@ -742,11 +750,14 @@ a.line-point {
 
 .line-point-settings {
   --dl-img-size: 15rem;
-  --dl-skin-img-size: 5rem;
+  --dl-skin-img-width: 3.333rem;
+  --dl-skin-img-height: 5rem;
   --dl-md-img-size: 15rem;
-  --dl-md-skin-img-size: 5rem;
+  --dl-md-skin-img-width: 3.333rem;
+  --dl-md-skin-img-height: 5rem;
   --dl-xs-img-size: 12rem;
-  --dl-xs-skin-img-size: 3rem;
+  --dl-xs-skin-img-width: 2rem;
+  --dl-xs-skin-img-height: 3rem;
 }
 
 .line-grid.editable {
@@ -1151,8 +1162,8 @@ a.dropdown-item.active {
   }
 
   .line-point .line-skin {
-    max-width: var(--dl-md-skin-img-size);
-    max-height: var(--dl-md-skin-img-size);
+    max-width: var(--dl-md-skin-img-width);
+    max-height: var(--dl-md-skin-img-height);
   }
 
   .line-point .line-skin:hover,
@@ -1175,8 +1186,8 @@ a.dropdown-item.active {
   }
 
   .line-grid .line-row .col .line-point .line-skin {
-    max-width: var(--dl-skin-img-size);
-    max-height: var(--dl-skin-img-size);
+    max-width: var(--dl-skin-img-width);
+    max-height: var(--dl-skin-img-height);
   }
 
   .line-grid .line-row .col .line-point .line-skin:hover,
@@ -1202,8 +1213,8 @@ a.dropdown-item.active {
   }
 
   .line-point .line-skin {
-    max-width: var(--dl-xs-skin-img-size);
-    max-height: var(--dl-xs-skin-img-size);
+    max-width: var(--dl-xs-skin-img-width);
+    max-height: var(--dl-xs-skin-img-height);
   }
 
   .line-point .line-skin:hover,
@@ -1226,8 +1237,8 @@ a.dropdown-item.active {
   }
 
   .line-grid .line-row .col .line-point .line-skin {
-    max-width: var(--dl-skin-img-size);
-    max-height: var(--dl-skin-img-size);
+    max-width: var(--dl-skin-img-width);
+    max-height: var(--dl-skin-img-height);
   }
 
   .line-grid .line-row .col .line-point .line-skin:hover,

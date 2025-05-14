@@ -10,12 +10,10 @@ export const REMOVE_LINE_COLUMN = 'REMOVE_LINE_COLUMN';
 export const ADD_LINE_ROW = 'ADD_LINE_ROW';
 export const REMOVE_LINE_ROW = 'REMOVE_LINE_ROW';
 
-export const defaultColumn = [null, null, null, null, null, null, null, null];
+export const defaultColumn = [null, null, null, null, null];
 export const defaultLine: Line = {
-	size: 8, // yLength ; xLength = line.columns.length
+	size: 5, // yLength ; xLength = line.columns.length
 	columns: [
-		defaultColumn,
-		defaultColumn,
 		defaultColumn,
 		defaultColumn,
 		defaultColumn,

@@ -59856,32 +59856,6 @@
         "gameId": "7153",
         "mostUsedDeckTypes": []
     },
-    "60c2b3aaa0e24f2d54a52383": {
-        "_id": "60c2b3aaa0e24f2d54a52383",
-        "monsterType": [
-            "Effect",
-            "Tuner"
-        ],
-        "popRank": 1.7976931348623157e+308,
-        "name": "Ghost Sister & Spooky Dogwood",
-        "konamiID": "60643554",
-        "alternateArt": true,
-        "type": "Monster",
-        "level": 3,
-        "race": "Zombie",
-        "attribute": "WATER",
-        "def": 1800,
-        "description": "During either turn, except the End Phase (Quick Effect): You can discard this card; apply this effect this turn. You can only use this effect of \"Ghost Sister & Spooky Dogwood\" once per turn.\n● Each time your opponent Special Summons an Effect Monster(s) during the Main Phase or Battle Phase, you gain LP equal to that monster's ATK. If you did not gain LP by this effect, your LP are halved during the End Phase.",
-        "__v": 0,
-        "atk": 0,
-        "linkArrows": [],
-        "handtrap": true,
-        "deckTypes": [],
-        "obtain": [],
-        "gameId": 14275,
-        "mostUsedDeckTypes": [],
-        "nameRelease": "2022-01-19T06:00:00.000Z"
-    },
     "66e55da821d86b033a2cbc54": {
         "_id": "66e55da821d86b033a2cbc54",
         "konamiID": "85687952",
@@ -60290,277 +60264,6 @@
         "isUpdated": true,
         "mostUsedDeckTypes": []
     },
-    "60c2b3a9a0e24f2d54a515b0": {
-        "_id": "60c2b3a9a0e24f2d54a515b0",
-        "monsterType": [
-            "Effect",
-            "Tuner"
-        ],
-        "popRank": 1.7976931348623157e+308,
-        "name": "Ash Blossom & Joyous Spring",
-        "konamiID": "14558128",
-        "alternateArt": true,
-        "type": "Monster",
-        "level": 3,
-        "race": "Zombie",
-        "attribute": "FIRE",
-        "def": 1800,
-        "description": "When a card or effect is activated that includes any of these effects (Quick Effect): You can discard this card; negate that effect.\n● Add a card from the Deck to the hand.\n● Special Summon from the Deck.\n● Send a card from the Deck to the GY.\nYou can only use this effect of \"Ash Blossom & Joyous Spring\" once per turn.",
-        "__v": 0,
-        "atk": 0,
-        "linkArrows": [],
-        "handtrap": true,
-        "deckTypes": [],
-        "obtain": [
-            {
-                "source": {
-                    "_id": "65c3267765d7f2fcc54500d0",
-                    "type": "Selection Pack",
-                    "name": "Name of Champions"
-                },
-                "amount": 1,
-                "type": "sets"
-            },
-            {
-                "source": {
-                    "_id": "67a46cc51e63562d8497ccf7",
-                    "type": "Selection Pack",
-                    "name": "Duel Experts"
-                },
-                "amount": 1,
-                "type": "sets"
-            }
-        ],
-        "gameId": "12950",
-        "rarity": "UR",
-        "release": "2024-02-07T06:40:00.000Z",
-        "mostUsedDeckTypes": [],
-        "nameRelease": "2022-01-19T06:00:00.000Z"
-    },
-    "60c2b3aaa0e24f2d54a5237f": {
-        "_id": "60c2b3aaa0e24f2d54a5237f",
-        "monsterType": [
-            "Effect",
-            "Tuner"
-        ],
-        "popRank": 1.7976931348623157e+308,
-        "name": "Ghost Ogre & Snow Rabbit",
-        "konamiID": "59438931",
-        "alternateArt": true,
-        "type": "Monster",
-        "level": 3,
-        "race": "Psychic",
-        "attribute": "LIGHT",
-        "def": 1800,
-        "description": "When a monster on the field activates its effect, or when a Spell/Trap that is already face-up on the field activates its effect (Quick Effect): You can send this card from your hand or field to the GY; destroy that card on the field. You can only use this effect of \"Ghost Ogre & Snow Rabbit\" once per turn.",
-        "__v": 0,
-        "atk": 0,
-        "linkArrows": [],
-        "handtrap": true,
-        "deckTypes": [],
-        "obtain": [],
-        "gameId": 11708,
-        "mostUsedDeckTypes": [],
-        "nameRelease": "2022-01-19T06:00:00.000Z"
-    },
-    "60c2b3aaa0e24f2d54a52374": {
-        "_id": "60c2b3aaa0e24f2d54a52374",
-        "monsterType": [
-            "Effect",
-            "Tuner"
-        ],
-        "popRank": 1.7976931348623157e+308,
-        "name": "Ghost Belle & Haunted Mansion",
-        "konamiID": "73642297",
-        "alternateArt": true,
-        "type": "Monster",
-        "level": 3,
-        "race": "Zombie",
-        "attribute": "EARTH",
-        "def": 1800,
-        "description": "When a card or effect is activated that includes any of these effects (Quick Effect): You can discard this card; negate that activation.\n● Add a card(s) from the GY to the hand, Deck, and/or Extra Deck.\n● Special Summon a Monster Card(s) from the GY.\n● Banish a card(s) from the GY.\nYou can only use this effect of \"Ghost Belle & Haunted Mansion\" once per turn.",
-        "__v": 0,
-        "atk": 0,
-        "linkArrows": [],
-        "handtrap": true,
-        "deckTypes": [],
-        "obtain": [
-            {
-                "source": {
-                    "_id": "67a46cc51e63562d8497ccf7",
-                    "type": "Selection Pack",
-                    "name": "Duel Experts"
-                },
-                "amount": 1,
-                "type": "sets"
-            }
-        ],
-        "gameId": 13587,
-        "rarity": "UR",
-        "release": "2025-02-06T08:00:00.000Z",
-        "mostUsedDeckTypes": [],
-        "nameRelease": "2022-01-19T06:00:00.000Z"
-    },
-    "60c2b3aaa0e24f2d54a5237d": {
-        "_id": "60c2b3aaa0e24f2d54a5237d",
-        "monsterType": [
-            "Effect",
-            "Tuner"
-        ],
-        "popRank": 1.7976931348623157e+308,
-        "name": "Ghost Mourner & Moonlit Chill",
-        "konamiID": "52038442",
-        "alternateArt": true,
-        "type": "Monster",
-        "level": 3,
-        "race": "Zombie",
-        "attribute": "WIND",
-        "def": 1800,
-        "description": "If your opponent Special Summons a monster(s) face-up (except during the Damage Step): You can discard this card, then target 1 of those face-up monsters; negate its effects until the end of this turn, also if that face-up monster leaves the field this turn, its controller takes damage equal to its original ATK. You can only use this effect of \"Ghost Mourner & Moonlit Chill\" once per turn.",
-        "__v": 0,
-        "atk": 0,
-        "linkArrows": [],
-        "handtrap": true,
-        "deckTypes": [],
-        "obtain": [],
-        "gameId": 15022,
-        "mostUsedDeckTypes": [],
-        "nameRelease": "2022-01-19T06:00:00.000Z"
-    },
-    "60c2b3aaa0e24f2d54a52380": {
-        "_id": "60c2b3aaa0e24f2d54a52380",
-        "monsterType": [
-            "Effect",
-            "Tuner"
-        ],
-        "popRank": 1.7976931348623157e+308,
-        "name": "Ghost Reaper & Winter Cherries",
-        "konamiID": "62015409",
-        "alternateArt": true,
-        "type": "Monster",
-        "level": 3,
-        "race": "Zombie",
-        "attribute": "DARK",
-        "def": 1800,
-        "description": "If your opponent controls more monsters than you do (Quick Effect): You can discard this card; reveal 1 card in your Extra Deck, then look at your opponent's Extra Deck, also banish all cards in their Extra Deck with the same name as that revealed card. You can only use this effect of \"Ghost Reaper & Winter Cherries\" once per turn.",
-        "__v": 0,
-        "atk": 0,
-        "linkArrows": [],
-        "handtrap": true,
-        "deckTypes": [],
-        "obtain": [],
-        "gameId": 12312,
-        "mostUsedDeckTypes": [],
-        "nameRelease": "2022-01-19T06:00:00.000Z"
-    },
-    "60c2b3aaa0e24f2d54a51ed1": {
-        "_id": "60c2b3aaa0e24f2d54a51ed1",
-        "monsterType": [
-            "Effect"
-        ],
-        "popRank": 1.7976931348623157e+308,
-        "name": "Droll & Lock Bird",
-        "konamiID": "94145022",
-        "alternateArt": true,
-        "type": "Monster",
-        "level": 1,
-        "race": "Spellcaster",
-        "attribute": "WIND",
-        "description": "If a card(s) is added from the Main Deck to your opponent's hand, except during the Draw Phase (Quick Effect): You can send this card from your hand to the GY; for the rest of this turn, cards cannot be added from either player's Main Deck to the hand.",
-        "__v": 0,
-        "atk": 0,
-        "def": 0,
-        "linkArrows": [],
-        "handtrap": true,
-        "deckTypes": [],
-        "obtain": [],
-        "gameId": 9279,
-        "mostUsedDeckTypes": [],
-        "nameRelease": "2022-01-19T06:00:00.000Z"
-    },
-    "67a96e3ee0213711fd4dd9da": {
-        "_id": "67a96e3ee0213711fd4dd9da",
-        "konamiID": "27204311",
-        "gameId": "14741",
-        "name": "Nibiru, the Primal Being",
-        "type": "Monster",
-        "alternateArt": true,
-        "monsterType": [
-            "Effect"
-        ],
-        "level": 11,
-        "race": "Rock",
-        "attribute": "LIGHT",
-        "atk": 3000,
-        "def": 600,
-        "description": "During the Main Phase, if your opponent Normal or Special Summoned 5 or more monsters this turn (Quick Effect): You can Tribute as many face-up monsters on the field as possible, and if you do, Special Summon this card from your hand, then Special Summon 1 \"Primal Being Token\" (Rock/LIGHT/Level 11/ATK ?/DEF ?) to your opponent's field. (This Token's ATK/DEF become the combined original ATK/DEF of the Tributed monsters.) You can only use this effect of \"Nibiru, the Primal Being\" once per turn.",
-        "handtrap": true,
-        "linkArrows": [],
-        "obtain": [],
-        "tcgRelease": "2019-08-29T00:00:00.000Z",
-        "ocgRelease": "2019-09-14T00:00:00.000Z",
-        "popRank": 1.7976931348623157e+308,
-        "tcgPopRank": 1.7976931348623157e+308,
-        "ocgPopRank": 1.7976931348623157e+308,
-        "deckTypes": [],
-        "__v": 0,
-        "mostUsedDeckTypes": [],
-        "nameRelease": "2022-01-19T06:00:00.000Z"
-    },
-    "67a96e2ee0213711fd4dd7f5": {
-        "_id": "67a96e2ee0213711fd4dd7f5",
-        "konamiID": "97268402",
-        "gameId": "8933",
-        "name": "Effect Veiler",
-        "type": "Monster",
-        "alternateArt": true,
-        "monsterType": [
-            "Effect",
-            "Tuner"
-        ],
-        "level": 1,
-        "race": "Spellcaster",
-        "attribute": "LIGHT",
-        "atk": 0,
-        "def": 0,
-        "description": "During your opponent's Main Phase (Quick Effect): You can send this card from your hand to the GY, then target 1 Effect Monster your opponent controls; negate the effects of that face-up monster your opponent controls, until the end of this turn.",
-        "handtrap": true,
-        "linkArrows": [],
-        "obtain": [],
-        "tcgRelease": "2010-08-07T00:00:00.000Z",
-        "ocgRelease": "2010-04-17T00:00:00.000Z",
-        "popRank": 1.7976931348623157e+308,
-        "tcgPopRank": 1.7976931348623157e+308,
-        "ocgPopRank": 1.7976931348623157e+308,
-        "deckTypes": [],
-        "__v": 0,
-        "mostUsedDeckTypes": [],
-        "nameRelease": "2022-01-19T06:00:00.000Z"
-    },
-    "60c2b3aaa0e24f2d54a520eb": {
-        "_id": "60c2b3aaa0e24f2d54a520eb",
-        "monsterType": [
-            "Effect"
-        ],
-        "popRank": 1.7976931348623157e+308,
-        "name": "Fantastical Dragon Phantazmay",
-        "konamiID": "78661339",
-        "alternateArt": true,
-        "type": "Monster",
-        "level": 7,
-        "race": "Dragon",
-        "attribute": "DARK",
-        "atk": 2400,
-        "def": 1800,
-        "description": "If your opponent Special Summons a Link Monster(s) (except during the Damage Step): You can Special Summon this card from your hand, draw cards equal to the number of Link Monsters your opponent controls +1, then shuffle cards from your hand into the Deck equal to the number of Link Monsters they control. When your opponent activates a card or effect that targets a monster(s) you control (Quick Effect): You can discard 1 card; negate the activation, and if you do, destroy it. You can only use each effect of \"Fantastical Dragon Phantazmay\" once per turn.",
-        "__v": 0,
-        "linkArrows": [],
-        "deckTypes": [],
-        "obtain": [],
-        "gameId": 14097,
-        "mostUsedDeckTypes": [],
-        "nameRelease": "2022-01-19T06:00:00.000Z"
-    },
     "60c2b3aaa0e24f2d54a52278": {
         "_id": "60c2b3aaa0e24f2d54a52278",
         "monsterType": [
@@ -60870,53 +60573,6 @@
         "gameId": "4817",
         "alternateArt": false,
         "mostUsedDeckTypes": []
-    },
-    "65d21c149600479ac161e575": {
-        "_id": "65d21c149600479ac161e575",
-        "konamiID": "12580477",
-        "gameId": "4343",
-        "name": "Raigeki",
-        "type": "Spell",
-        "alternateArt": true,
-        "monsterType": [],
-        "race": "Normal",
-        "description": "Destroy all monsters your opponent controls.",
-        "linkArrows": [],
-        "obtain": [],
-        "tcgRelease": "2002-03-08T00:00:00.000Z",
-        "ocgRelease": "1999-03-06T00:00:00.000Z",
-        "banStatus": "Limited 2",
-        "ocgBanStatus": "Limited 2",
-        "popRank": 1.7976931348623157e+308,
-        "deckTypes": [],
-        "__v": 0,
-        "mostUsedDeckTypes": [],
-        "nameRelease": "2022-01-19T07:00:00.000Z"
-    },
-    "67af3d11cec6df41a3627991": {
-        "_id": "67af3d11cec6df41a3627991",
-        "konamiID": "14532163",
-        "gameId": "14876",
-        "name": "Lightning Storm",
-        "type": "Spell",
-        "alternateArt": true,
-        "monsterType": [],
-        "race": "Normal",
-        "description": "If you control no face-up cards: Activate 1 of these effects;\r\n● Destroy all Attack Position monsters your opponent controls.\r\n● Destroy all Spells and Traps your opponent controls.\r\nYou can only activate 1 \"Lightning Storm\" per turn.",
-        "linkArrows": [],
-        "obtain": [],
-        "tcgRelease": "2020-01-30T00:00:00.000Z",
-        "ocgRelease": "2019-10-12T00:00:00.000Z",
-        "banStatus": "Limited 2",
-        "tcgBanStatus": "Limited 2",
-        "ocgBanStatus": null,
-        "popRank": 1.7976931348623157e+308,
-        "tcgPopRank": 1.7976931348623157e+308,
-        "ocgPopRank": 1.7976931348623157e+308,
-        "deckTypes": [],
-        "__v": 0,
-        "mostUsedDeckTypes": [],
-        "nameRelease": "2022-01-19T06:00:00.000Z"
     },
     "60c2b3aca0e24f2d54a53679": {
         "_id": "60c2b3aca0e24f2d54a53679",
@@ -61229,31 +60885,6 @@
         "mostUsedDeckTypes": [
             "Floowandereeze"
         ]
-    },
-    "67b1d6da26b659a8d09c9a73": {
-        "_id": "67b1d6da26b659a8d09c9a73",
-        "konamiID": "24224830",
-        "gameId": "13619",
-        "name": "Called by the Grave",
-        "type": "Spell",
-        "alternateArt": true,
-        "monsterType": [],
-        "race": "Quick-Play",
-        "description": "Target 1 monster in your opponent's GY; banish it, and if you do, until the end of the next turn, its effects are negated, as well as the activated effects and effects on the field of monsters with the same original name.",
-        "linkArrows": [],
-        "obtain": [],
-        "tcgRelease": "2018-03-22T00:00:00.000Z",
-        "ocgRelease": "2018-01-13T00:00:00.000Z",
-        "banStatus": "Limited 2",
-        "tcgBanStatus": "Limited 1",
-        "ocgBanStatus": "Limited 2",
-        "popRank": 1.7976931348623157e+308,
-        "tcgPopRank": 1.7976931348623157e+308,
-        "ocgPopRank": 1.7976931348623157e+308,
-        "deckTypes": [],
-        "__v": 0,
-        "mostUsedDeckTypes": [],
-        "nameRelease": "2022-01-19T06:00:00.000Z"
     },
     "60c2b3aaa0e24f2d54a521e5": {
         "_id": "60c2b3aaa0e24f2d54a521e5",
@@ -61688,30 +61319,6 @@
         "alternateArt": false,
         "mostUsedDeckTypes": []
     },
-    "67b094db6b2dd03f8f3f76d9": {
-        "_id": "67b094db6b2dd03f8f3f76d9",
-        "konamiID": "49238328",
-        "gameId": "14144",
-        "name": "Pot of Extravagance",
-        "type": "Spell",
-        "alternateArt": true,
-        "monsterType": [],
-        "race": "Normal",
-        "description": "At the start of your Main Phase 1: Banish 3 or 6 random face-down cards from your Extra Deck, face-down; draw 1 card for every 3 cards banished. For the rest of this turn after this card resolves, you cannot draw any cards by card effects.",
-        "linkArrows": [],
-        "obtain": [],
-        "tcgRelease": "2019-01-31T00:00:00.000Z",
-        "ocgRelease": "2018-10-13T00:00:00.000Z",
-        "banStatus": "Limited 1",
-        "ocgBanStatus": "Limited 2",
-        "popRank": 1.7976931348623157e+308,
-        "tcgPopRank": 1.7976931348623157e+308,
-        "ocgPopRank": 1.7976931348623157e+308,
-        "deckTypes": [],
-        "__v": 0,
-        "mostUsedDeckTypes": [],
-        "nameRelease": "2022-01-19T06:00:00.000Z"
-    },
     "60c2b3aca0e24f2d54a53152": {
         "_id": "60c2b3aca0e24f2d54a53152",
         "monsterType": [],
@@ -61790,29 +61397,6 @@
             "Horus",
             "Gimmick Puppet"
         ]
-    },
-    "60c2b3aaa0e24f2d54a521de": {
-        "_id": "60c2b3aaa0e24f2d54a521de",
-        "monsterType": [],
-        "popRank": 1.7976931348623157e+308,
-        "name": "Foolish Burial",
-        "konamiID": "81439173",
-        "type": "Spell",
-        "race": "Normal",
-        "description": "Send 1 monster from your Deck to the GY.",
-        "__v": 0,
-        "linkArrows": [],
-        "deckTypes": [],
-        "obtain": [],
-        "alternateArt": true,
-        "ocgRelease": "2003-08-07T00:00:00.000Z",
-        "tcgRelease": "2007-10-24T00:00:00.000Z",
-        "banStatus": "Limited 1",
-        "tcgBanStatus": "Limited 1",
-        "ocgBanStatus": "Limited 1",
-        "gameId": 5236,
-        "mostUsedDeckTypes": [],
-        "nameRelease": "2022-01-19T06:00:00.000Z"
     },
     "60c2b3aaa0e24f2d54a521e1": {
         "_id": "60c2b3aaa0e24f2d54a521e1",
@@ -61907,50 +61491,6 @@
         "tcgRelease": "2016-09-15T00:00:00.000Z",
         "gameId": 5551,
         "mostUsedDeckTypes": []
-    },
-    "60c2b3aba0e24f2d54a52cf5": {
-        "_id": "60c2b3aba0e24f2d54a52cf5",
-        "monsterType": [],
-        "popRank": 1.7976931348623157e+308,
-        "name": "Monster Reborn",
-        "konamiID": "83764718",
-        "alternateArt": true,
-        "type": "Spell",
-        "race": "Normal",
-        "description": "Target 1 monster in either GY; Special Summon it.",
-        "__v": 0,
-        "linkArrows": [],
-        "deckTypes": [],
-        "obtain": [],
-        "banStatus": "Limited 1",
-        "tcgBanStatus": "Limited 1",
-        "ocgBanStatus": "Limited 1",
-        "gameId": 4842,
-        "mostUsedDeckTypes": [],
-        "nameRelease": "2022-01-19T07:00:00.000Z"
-    },
-    "661fed5145fc61b7c04621df": {
-        "_id": "661fed5145fc61b7c04621df",
-        "konamiID": "2295440",
-        "gameId": "8197",
-        "name": "One for One",
-        "type": "Spell",
-        "alternateArt": true,
-        "monsterType": [],
-        "race": "Normal",
-        "description": "Send 1 monster from your hand to the GY; Special Summon 1 Level 1 monster from your hand or Deck.",
-        "linkArrows": [],
-        "obtain": [],
-        "tcgRelease": "2009-05-02T00:00:00.000Z",
-        "ocgRelease": "2009-02-14T00:00:00.000Z",
-        "banStatus": "Limited 1",
-        "tcgBanStatus": "Limited 1",
-        "ocgBanStatus": "Limited 1",
-        "popRank": 1.7976931348623157e+308,
-        "deckTypes": [],
-        "__v": 0,
-        "mostUsedDeckTypes": [],
-        "nameRelease": "2022-01-19T06:00:00.000Z"
     },
     "61ef0edf39cb086ec8b2b511": {
         "_id": "61ef0edf39cb086ec8b2b511",
@@ -62097,6 +61637,140 @@
         "mostUsedDeckTypes": [
             "Lyrilusc",
             "Snake-Eye Fiendsmith"
+        ]
+    },
+    "60c2b3aaa0e24f2d54a52381": {
+        "_id": "60c2b3aaa0e24f2d54a52381",
+        "monsterType": [
+            "Effect",
+            "Tuner"
+        ],
+        "popRank": 1125,
+        "name": "Ghost Reaper & Winter Cherries",
+        "konamiID": "62015408",
+        "type": "Monster",
+        "level": 3,
+        "race": "Zombie",
+        "attribute": "DARK",
+        "def": 1800,
+        "description": "If your opponent controls more monsters than you do (Quick Effect): You can discard this card; reveal 1 card in your Extra Deck, then look at your opponent's Extra Deck, also banish all cards in their Extra Deck with the same name as that revealed card. You can only use this effect of \"Ghost Reaper & Winter Cherries\" once per turn.",
+        "__v": 0,
+        "atk": 0,
+        "linkArrows": [],
+        "handtrap": true,
+        "deckTypes": [
+            "Tenpai Dragon",
+            "Exodia",
+            "Orcust",
+            "Mikanko"
+        ],
+        "obtain": [
+            {
+                "source": {
+                    "_id": "61eaddc798a43480f06172db",
+                    "type": "Normal Pack",
+                    "name": "Master Pack"
+                },
+                "amount": 1,
+                "type": "sets"
+            },
+            {
+                "source": {
+                    "_id": "656ed01e2d7d74b527b32711",
+                    "type": "Normal Pack",
+                    "name": "Mighty Contenders"
+                },
+                "amount": 1,
+                "type": "sets"
+            }
+        ],
+        "rarity": "UR",
+        "release": "2022-01-19T06:00:00.000Z",
+        "ocgRelease": "2016-01-09T00:00:00.000Z",
+        "tcgRelease": "2016-05-05T00:00:00.000Z",
+        "gameId": 12312,
+        "mostUsedDeckTypes": [
+            "Orcust",
+            "Mikanko",
+            "Exodia"
+        ]
+    },
+    "60c2b3aaa0e24f2d54a52384": {
+        "_id": "60c2b3aaa0e24f2d54a52384",
+        "monsterType": [
+            "Effect",
+            "Tuner"
+        ],
+        "popRank": 1992,
+        "name": "Ghost Sister & Spooky Dogwood",
+        "konamiID": "60643553",
+        "type": "Monster",
+        "level": 3,
+        "race": "Zombie",
+        "attribute": "WATER",
+        "def": 1800,
+        "description": "During either turn, except the End Phase (Quick Effect): You can discard this card; apply this effect this turn. You can only use this effect of \"Ghost Sister & Spooky Dogwood\" once per turn.\r\n● Each time your opponent Special Summons an Effect Monster(s) during the Main Phase or Battle Phase, you gain LP equal to that monster's ATK. If you did not gain LP by this effect, your LP are halved during the End Phase.",
+        "__v": 0,
+        "atk": 0,
+        "linkArrows": [],
+        "handtrap": true,
+        "deckTypes": [
+            "Exodia"
+        ],
+        "obtain": [
+            {
+                "source": {
+                    "_id": "61eaddc798a43480f06172db",
+                    "type": "Normal Pack",
+                    "name": "Master Pack"
+                },
+                "amount": 1,
+                "type": "sets"
+            }
+        ],
+        "rarity": "UR",
+        "release": "2022-01-19T06:00:00.000Z",
+        "ocgRelease": "2019-01-12T00:00:00.000Z",
+        "tcgRelease": "2019-05-02T00:00:00.000Z",
+        "gameId": 14275,
+        "mostUsedDeckTypes": [
+            "Exodia"
+        ]
+    },
+    "60c2b3aba0e24f2d54a52cf4": {
+        "_id": "60c2b3aba0e24f2d54a52cf4",
+        "monsterType": [],
+        "popRank": 2213,
+        "name": "Monster Reborn",
+        "konamiID": "83764719",
+        "type": "Spell",
+        "race": "Normal",
+        "description": "Target 1 monster in either GY; Special Summon it.",
+        "__v": 0,
+        "linkArrows": [],
+        "deckTypes": [
+            "Aroma"
+        ],
+        "obtain": [
+            {
+                "source": {
+                    "_id": "61ef0297c65dc7a88d9faa7d",
+                    "name": "Solo Mode Reward"
+                },
+                "amount": 1,
+                "type": "otherSources"
+            }
+        ],
+        "banStatus": "Limited 1",
+        "rarity": "UR",
+        "release": "2022-01-19T07:00:00.000Z",
+        "ocgRelease": "1999-03-27T00:00:00.000Z",
+        "tcgRelease": "2002-03-08T00:00:00.000Z",
+        "tcgBanStatus": "Limited 1",
+        "ocgBanStatus": "Limited 1",
+        "gameId": 4842,
+        "mostUsedDeckTypes": [
+            "Aroma"
         ]
     }
 }

@@ -1,4 +1,4 @@
-import { Limitations } from '@/constants/limitations';
+import { Limitations } from '@/consts/limitations';
 
 export interface Card {
 	_id: string;
