@@ -78,7 +78,7 @@ export const randomizeDeck = ({
 		matches
 			.map(match => match.slice(1, -1)) // remove quotes
 			.filter(name => !joinedCards.has(name)); // remove cards which joined or is joined
-			
+
 		// if consistency is limited add to joinedCards after processing
 		if (consistency < 2) {
 			matches.forEach(v => joinedCards.add(v));
@@ -97,7 +97,7 @@ export const randomizeDeck = ({
 				}
 				return { ...card, required: true };
 			})
-			.filter(card => card !== null);
+			.filter(card => card !== null) as Card[];
 	};
 
 	const gapDeck = (deck: Card[], limit: number, maxLimit: number = limit) => {
