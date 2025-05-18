@@ -1,4 +1,4 @@
-import { deckToYdk } from '@/business/deckToYdk';
+import { deckToYdk } from '@/functions/deck';
 import { createFile, download } from '@/functions/file';
 import { Deck } from '@/types/Deck';
 import { useState } from 'react';

@@ -1,45 +1,38 @@
 import { Legend, StringObject } from '@/types/Ui';
 
 export const colors: StringObject = {
-	default: '#fff', //white // '#bdc3d1', // grey
-	x: '#0080ff', // light_blue
-	fusion: '#a054b9', // purple '#a333c8'
-	mode: '#ef6e33', // orange
-	gold: '#e4c05c', // gold '#E9DA1D'
-	human: '#F966DE', // pink
-	dark: '#6435c9', // violet '#684399' // black #000 ,
-	light: '#fffd8d', // light yellow
-	ice: '#87C7C6', // light blue
-	fire: '#db2828', // red
-	grass: '#21ba45', // green
-	marine: '#0056a6', // marine blue
-	electric: '#c0e617', // yellow
-	wind: '#92f5c4', // yellow
-	earth: '#a46204', // yellow
-	machine: '#909090', // yellow
-	// psychic: '#a24795', // fushia
+	default: '#888',
+	summon: '#c7ab6f',
+	spell: '#149789',
+	trap: '#ab247b',
+	effect: '#b6764f',
+	fusion: '#833a90',
+	ritual: '#7d9dcb',
+	synchro: '#fff',
+	xyz: '#000',
+	link: '#136093',
+	max: '#d86724',
 };
 
 export const legend: Legend[] = [
-	{ key: 'default', color: colors.default, text: 'Default color' },
-	{ key: 'x', color: colors.x, text: 'X antibody' },
 	{
-		key: 'dark',
-		color: colors.dark,
-		text: 'Dark, death, black, chaos, demon, ... evolution',
+		key: 'default',
+		color: colors.default,
+		text: 'Normal summon, set a spell / a trap',
 	},
-	{ key: 'fusion', color: colors.fusion, text: 'Fusion (DNA, Xros)' },
-	{ key: 'mode', color: colors.mode, text: 'Mode change (Burst Mode,\u00A0...)' },
-	{ key: 'human', color: colors.human, text: 'Fusion with a human' },
-	{ key: 'gold', color: colors.gold, text: 'Gold or warp evolution digimon' },
-	{ key: 'light', color: colors.light, text: 'Holy, angel evolution' },
-	{ key: 'fire', color: colors.fire, text: 'Fire, lava made digimon' },
-	{ key: 'ice', color: colors.ice, text: 'Ice, snow made digimon' },
-	{ key: 'marine', color: colors.marine, text: 'Marine digimon' },
-	{ key: 'wind', color: colors.wind, text: 'Aerial, wind master digimon' },
-	{ key: 'earth', color: colors.earth, text: 'Earth, rock digimon' },
-	{ key: 'grass', color: colors.grass, text: 'Grass made digimon' },
-	{ key: 'electric', color: colors.electric, text: 'Thunder, electric digimon' },
-	{ key: 'machine', color: colors.machine, text: 'Machine, metal made digimon' },
+	{ key: 'summon', color: colors.summon, text: 'Special summon' },
+	{ key: 'effect', color: colors.effect, text: 'Monster effect' },
+	{
+		key: 'spell',
+		color: colors.spell,
+		text: 'Spell effect',
+	},
+	{ key: 'trap', color: colors.trap, text: 'Trap effect' },
+	{ key: 'fusion', color: colors.fusion, text: 'Fusion monsters' },
+	{ key: 'ritual', color: colors.ritual, text: 'Ritual summon' },
+	{ key: 'synchro', color: colors.synchro, text: 'Synchro summon' },
+	{ key: 'xyz', color: colors.xyz, text: 'Xyz summon' },
+	{ key: 'link', color: colors.link, text: 'Link summon' },
+	{ key: 'max', color: colors.max, text: 'Maximum summon' },
 ];
 export default colors;

@@ -2,18 +2,18 @@ import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import Layout from '@/components/Layout';
 import { GetStaticProps } from 'next';
-import { randomizeDeck, RandomizeDeckArgs } from '@/business/deckRandomizer';
+import { randomizeDeck, RandomizeDeckArgs } from '@/functions/deckRandomizer';
 import Deck from '@/components/Card/Deck';
 import Icon from '@/components/Icon';
 import { Deck as DeckType } from '@/types/Deck';
-import { getCardArchetype, isExtraDeck } from '@/business/card';
+import { getCardArchetype, isExtraDeck } from '@/functions/card';
 import useDownloadYdk from '@/hooks/useDownloadYdk';
-import { RegulationLabels, Regulations } from '@/constants/limitations';
+import { RegulationLabels, Regulations } from '@/consts/limitations';
 import SelectField from '@/components/Field/SelectField';
 import Range from '@/components/Field/Range';
-import { consistencyLevels } from '@/constants/consistency';
+import { consistencyLevels } from '@/consts/consistency';
 
-type Props = Omit<RandomizeDeckArgs, 'regulation'>;
+type Props = Omit<RandomizeDeckArgs, 'regulation' & 'consitency'>;
 
 const defaultProps: Props = {
 	cards: {},
@@ -33,7 +33,7 @@ const PageLines: React.FC<Props> = props => {
 
 	const handleRandomize = async () => {
 		setLoading(true);
-		randomizeDeck(props).then(deck => {
+		randomizeDeck({ ...props, regulation, consistency }).then(deck => {
 			setDeck(deck);
 			setLoading(false);
 		});

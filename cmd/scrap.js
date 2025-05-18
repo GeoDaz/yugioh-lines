@@ -21,7 +21,11 @@ async function run() {
 	let currentLen = limit;
 	do {
 		const res = await fetchCards(page, limit);
-		res.forEach(card => (cards[card._id] = card));
+		res.forEach(card => {
+			if (!card.alternateArt) {
+				cards[card._id] = card;
+			}
+		});
 		currentLen = res.length;
 		console.log(`Fetched page ${page}, ${currentLen} cards`);
 		page++;

@@ -187,7 +187,7 @@ const LinePointSettings: React.FC<Props> = ({
 									'text-decoration-line-through'
 							)}
 						>
-							Add a skin (max 3)
+							Add a trigger (max 3)
 						</h4>
 						<SearchBar
 							label={`Research a card`}
@@ -200,7 +200,7 @@ const LinePointSettings: React.FC<Props> = ({
 									{skin}{' '}
 									<ButtonRemove
 										onClick={() => handleRemoveSkin(i)}
-										title="remove skin"
+										title="remove trigger"
 									/>
 								</h5>
 							))}
@@ -232,7 +232,7 @@ const SettingPoint: React.FC<{
 				path={point.image}
 				mirror={point.mirror}
 				className={imgClassName}
-				width={300}
+				width={200}
 				height={300}
 			/>
 			{point.skins?.map((skin, i) => (
@@ -241,7 +241,7 @@ const SettingPoint: React.FC<{
 					name={skin}
 					className="line-skin"
 					loadable={false}
-					width={300}
+					width={200}
 					height={300}
 					style={{ bottom: 3.3 * i + 'em' }}
 				/>
