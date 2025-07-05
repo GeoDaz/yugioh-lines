@@ -11,7 +11,7 @@ const useDownloadImg = (line: Line, name: string | undefined) => {
 		setDownloading(true);
 		let type: string = 'blob';
 		const cleared = clearLine(line);
-		fetch(process.env.NEXT_PUBLIC_PUPPETEER_URL + '/digimon-lines/build', {
+		fetch(process.env.NEXT_PUBLIC_PUPPETEER_URL + '/yugioh-lines/build', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify(cleared),

@@ -21,9 +21,9 @@ const Card = ({
 				<a
 					onMouseEnter={onMouseEnter}
 					onMouseLeave={onMouseLeave}
-					href={encodeURIComponent(
-						`https://www.masterduelmeta.com/cards/${card.name}`
-					)}
+					href={`https://www.masterduelmeta.com/cards/${encodeURIComponent(
+						card.name
+					)}`}
 					target="_blank"
 					rel="noopener noreferrer nofollow"
 					title={card.name}

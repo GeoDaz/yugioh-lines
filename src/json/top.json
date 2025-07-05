@@ -61772,5 +61772,35 @@
         "mostUsedDeckTypes": [
             "Aroma"
         ]
+    },
+    "60c2b3aca0e24f2d54a535ea": {
+        "_id": "60c2b3aca0e24f2d54a535ea",
+        "monsterType": [],
+        "popRank": 1.7976931348623157e+308,
+        "name": "Silent Graveyard",
+        "konamiID": "53778229",
+        "type": "Spell",
+        "race": "Quick-Play",
+        "description": "Discard 1 card; effects that activate in the GY this turn are negated.",
+        "__v": 0,
+        "linkArrows": [],
+        "deckTypes": [],
+        "obtain": [
+            {
+                "source": {
+                    "_id": "61eaddc798a43480f06172db",
+                    "type": "Normal Pack",
+                    "name": "Master Pack"
+                },
+                "amount": 1,
+                "type": "sets"
+            }
+        ],
+        "rarity": "R",
+        "release": "2022-01-19T06:00:00.000Z",
+        "ocgRelease": "2010-02-20T00:00:00.000Z",
+        "tcgRelease": "2010-05-07T00:00:00.000Z",
+        "gameId": 8835,
+        "mostUsedDeckTypes": []
     }
 }
