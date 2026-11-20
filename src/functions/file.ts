@@ -1,14 +1,8 @@
-import fs from 'fs';
-
 declare global {
 	interface Navigator {
 		msSaveBlob?: (blob: any, defaultName?: string) => boolean;
 	}
 }
-
-export const getDirPaths = (dir: string): string[] => {
-	return fs.readdirSync(`./public/${dir}/`).map(path => path.split('.')[0]);
-};
 
 export const formatFileName = (string: string) =>
 	string.replace(/\/+/g, '-').replace(/:+/g, '');

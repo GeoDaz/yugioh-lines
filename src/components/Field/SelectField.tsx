@@ -6,7 +6,6 @@ export type SelectFieldProps = {
 	value?: string;
 	label?: string;
 	onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
-	placeholder?: string;
 	options?: StringObject;
 	children?: React.ReactNode;
 	disabled?: boolean;
@@ -19,7 +18,6 @@ const SelectField = ({
 	label,
 	value,
 	onChange,
-	placeholder = label,
 	options,
 	children,
 	className,
@@ -31,7 +29,6 @@ const SelectField = ({
 			id={id}
 			value={value}
 			onChange={onChange}
-			placeholder={placeholder}
 			disabled={disabled}
 			aria-label={`${label} select`}
 		>

@@ -1,7 +1,6 @@
 import React, { useState, useReducer, useMemo } from 'react';
 import { Alert, Button, FormControl, InputGroup } from 'react-bootstrap';
 import Layout from '@/components/Layout';
-import { getDirPaths } from '@/functions/file';
 import ZoomBar from '@/components/ZoomBar';
 import ColorLegend from '@/components/ColorLegend';
 import LineGrid from '@/components/Line/LineGrid';

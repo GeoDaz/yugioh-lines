@@ -21,22 +21,6 @@ const useLocalStorage = ({
 	defaultItem,
 	locked = false,
 }: Props): Return => {
-	useEffect(() => {
-		// don't get stored value if first item is not the default one
-		if (!locked && item === defaultItem) {
-			const storedItem = getStoredItem();
-			if (storedItem) {
-				setItem(storedItem);
-			}
-		}
-	}, []);
-
-	useEffect(() => {
-		if (!locked && item && item !== defaultItem) {
-			setItemToStorage(item);
-		}
-	}, [item]);
-
 	const getStoredItem = () => {
 		try {
 			let item = localStorage.getItem(key);
@@ -63,6 +47,22 @@ const useLocalStorage = ({
 			console.error(error);
 		}
 	};
+
+	useEffect(() => {
+		// don't get stored value if first item is not the default one
+		if (!locked && item === defaultItem) {
+			const storedItem = getStoredItem();
+			if (storedItem) {
+				setItem(storedItem);
+			}
+		}
+	}, []);
+
+	useEffect(() => {
+		if (!locked && item && item !== defaultItem) {
+			setItemToStorage(item);
+		}
+	}, [item]);
 
 	return { getStoredItem, setItemToStorage, removeItemFromStorage };
 };
